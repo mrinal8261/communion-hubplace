@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import logo from "../assets/logo.png"; // Adjust path based on your project structure
 
 function Header() {
     return (
@@ -10,7 +11,11 @@ function Header() {
             transition={{ type: "spring", stiffness: 100 }}
         >
             <div className="container">
-                <a className="navbar-brand" href="/">CommunionHub</a>
+                {/* Logo and Site Title */}
+                <a className="navbar-brand d-flex align-items-center" href="/">
+                    <img src={logo} alt="CommunionHub Logo" className="logo me-2" />
+                    <span>CommunionHub</span>
+                </a>
                 <button
                     className="navbar-toggler"
                     type="button"

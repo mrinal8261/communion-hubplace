@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Navbar, Nav, Modal, Button, Container } from "react-bootstrap";
+import logo from "../assets/logo.png"; // Adjust path according to your folder structure
 
 function EventHeader({ categories, onFilter, onAddEvent }) {
     const [showModal, setShowModal] = useState(false);
@@ -10,12 +11,18 @@ function EventHeader({ categories, onFilter, onAddEvent }) {
     return (
         <Navbar bg="dark" expand="lg" variant="dark" sticky="top">
             <Container>
-                {/* Brand Name */}
-                <Navbar.Brand href="/">CommunionHub</Navbar.Brand>
+                {/* Brand Name with Logo */}
+                <Navbar.Brand href="/" className="d-flex align-items-center">
+                    <img
+                        src={logo}
+                        alt="CommunionHub Logo"
+                        style={{ height: "40px", marginRight: "10px" }}
+                    />
+                    CommunionHub
+                </Navbar.Brand>
 
                 {/* Filter Dropdown */}
                 <Nav className="ms-auto d-flex align-items-center">
-                   
                     <select
                         id="categoryFilter"
                         className="form-select"
@@ -24,7 +31,9 @@ function EventHeader({ categories, onFilter, onAddEvent }) {
                     >
                         <option value="">All Categories</option>
                         {categories.map((category, index) => (
-                            <option key={index} value={category}>{category}</option>
+                            <option key={index} value={category}>
+                                {category}
+                            </option>
                         ))}
                     </select>
                 </Nav>
@@ -61,19 +70,39 @@ function EventHeader({ categories, onFilter, onAddEvent }) {
                     >
                         <div className="mb-3">
                             <label className="form-label">Title</label>
-                            <input type="text" name="title" className="form-control" required />
+                            <input
+                                type="text"
+                                name="title"
+                                className="form-control"
+                                required
+                            />
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Date</label>
-                            <input type="date" name="date" className="form-control" required />
+                            <input
+                                type="date"
+                                name="date"
+                                className="form-control"
+                                required
+                            />
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Location</label>
-                            <input type="text" name="location" className="form-control" required />
+                            <input
+                                type="text"
+                                name="location"
+                                className="form-control"
+                                required
+                            />
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Description</label>
-                            <textarea name="description" className="form-control" rows="3" required></textarea>
+                            <textarea
+                                name="description"
+                                className="form-control"
+                                rows="3"
+                                required
+                            ></textarea>
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Category</label>
