@@ -5,8 +5,6 @@ import EventsPage from "./pages/EventsPage";
 import AboutPage from './pages/AboutPage';
 
 
-
-
 function App() {
     return (
         <Router>

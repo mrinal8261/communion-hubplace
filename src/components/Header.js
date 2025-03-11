@@ -11,11 +11,13 @@ function Header() {
             transition={{ type: "spring", stiffness: 100 }}
         >
             <div className="container">
-                {/* Logo and Site Title */}
+                {/* Logo and Brand */}
                 <a className="navbar-brand d-flex align-items-center" href="/">
                     <img src={logo} alt="CommunionHub Logo" className="logo me-2" />
                     <span>CommunionHub</span>
                 </a>
+
+                {/* Toggle Button */}
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -27,6 +29,8 @@ function Header() {
                 >
                     <span className="navbar-toggler-icon"></span>
                 </button>
+
+                {/* Collapsible Navigation */}
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
